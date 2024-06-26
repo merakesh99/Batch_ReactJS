@@ -14,9 +14,9 @@ function Note() {
 //   }, []);
 
   // Update local storage whenever TODOs change
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
+  // useEffect(() => {
+  //   localStorage.setItem('todos', JSON.stringify(todos));
+  // }, [todos]);
 
   const handleAddTodo = () => {
     // if (task.trim() !== '') {
@@ -26,10 +26,10 @@ function Note() {
     // }
   };
 
-  const handleRemoveTodo = (index) => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-  };
+  // const handleRemoveTodo = (index) => {
+  //   const newTodos = todos.filter((_, i) => i !== index);
+  //   setTodos(newTodos);
+  // };
 
   return (
     <div className="App">
