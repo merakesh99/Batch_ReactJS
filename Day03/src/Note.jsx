@@ -3,7 +3,7 @@ import './App.css';
 
 function Note() {
   const [todos, setTodos] = useState([]);
-  const [task, setTask] = useState(''); //
+  const [task, setTask] = useState(''); 
 
   // Load TODOs from local storage on app startup
 //   useEffect(() => {
@@ -21,6 +21,7 @@ function Note() {
   const handleAddTodo = () => {
     // if (task.trim() !== '') {
       setTodos([...todos, task]);
+    
       setTask('');
     // }
   };
@@ -39,18 +40,19 @@ function Note() {
             type="text"
             placeholder="Add a new task here"
             value={task}
-            onChange={(e) => setTask(e.target.value)}
+            onChange={(e)=>setTodos(e.target.value)}
           />
           <button onClick={handleAddTodo}>Add</button>
         </div>
-        {
-            todos.map((todo,index)=>(
-                <li key={index}>
-                    {todo}
-                </li>
-            ))
-        }
       </header>
+
+     {
+      todos.map((todo,index)=>(
+        <li key={index}>
+          {todo}
+        </li>
+      ))
+     }
     </div>
   );
 }
