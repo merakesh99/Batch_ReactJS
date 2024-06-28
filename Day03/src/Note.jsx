@@ -19,11 +19,11 @@ function Note() {
   // }, [todos]);
 
   const handleAddTodo = () => {
-    // if (task.trim() !== '') {
-      setTodos([...todos, task]);
-    
+    if (task.trim() !== '') {    //task = '   '   task.trim() = '' !== ''
+      setTodos([...todos,task]);
+      localStorage.setItem('todos',JSON.stringify(todos));
       setTask('');
-    // }
+    }
   };
 
   // const handleRemoveTodo = (index) => {
@@ -40,7 +40,7 @@ function Note() {
             type="text"
             placeholder="Add a new task here"
             value={task}
-            onChange={(e)=>setTodos(e.target.value)}
+            onChange={(e)=>setTask(e.target.value)}
           />
           <button onClick={handleAddTodo}>Add</button>
         </div>
